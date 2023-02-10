@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Bellefair&display=swap');
+
+.App {
+  background: url("./assets/destination/background-destination-desktop.jpg");
+  color: #fff;
+  min-height: 100vh;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.destination.hide {
+  display: none;
+}
+
+.destination.show {
+  display: flex;
+  justify-content: space-between;
+}
+
+.destinations-navigation {
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.destinations-navigation button {
+  position: relative;
+  padding: 0 0 14px;
+  margin: 0 20px;
+  color: #fff;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.destinations-navigation button::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: #fff;
+  transition: width 0.4s ease-in-out;
+  -webkit-transition: width 0.4s ease-in-out;
+  -moz-transition: width 0.4s ease-in-out;
+  -ms-transition: width 0.4s ease-in-out;
+  -o-transition: width 0.4s ease-in-out;
+}
+
+.destinations-navigation button.current::after,
+.destinations-navigation button:hover::after {
+  width: 100%;
+}
+
+.destination-image img {
+  width: 100%;
+}
+
+.destination-description {
+  max-width: 445px; /** Stolen from the live website lol :D */
+}
+
+.destination-para {
+  margin-top: 14px;
+  padding: 0 0 54px 0;
+  border-bottom: 1px solid #fff;
+}
+
+.destination-title {
+  font-family: 'Bellefair', serif;
+  font-size: 100px;
+  font-weight: 400;
+}
+
+.destination-numbers {
+  margin-top: 28px;
+  display: flex;
+  align-items: center;
+  gap: 80px;
+}
+
+@media(max-width: 768px) {
+  .destination.show {
+    flex-direction: column;
+  }
+
+  .destination-description {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
